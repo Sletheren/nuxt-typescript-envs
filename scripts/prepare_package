@@ -1,0 +1,5 @@
+set -ex
+rsync -aqr .nuxt ./deploy
+cp package.json ./deploy
+cd ./deploy
+yarn install --production
