@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-typescript",
+  "name": "nuxt-typescript-envs",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,11 +10,12 @@
     "start:prod": "NODE_ENV=production nuxt start ",
     "image:prepare": "sh scripts/prepare_package",
     "image:build": "docker build -t nuxt-envs ./deploy",
-    "image:run": "docker run -p 3000:3000 -e HOST=0.0.0.0 -e baz=hello nuxt-envs",
+    "image:run": "docker run -p 3000:3000 -e HOST=0.0.0.0 -e NR_APP_NAME=nr-nuxt NR_LICENCE_KEY=xxxxxx",
     "generate": "nuxt generate"
   },
   "dependencies": {
     "core-js": "^3.9.1",
+    "newrelic": "^7.4.0",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {

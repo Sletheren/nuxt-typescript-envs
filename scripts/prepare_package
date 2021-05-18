@@ -1,5 +1,7 @@
 set -ex
 rsync -aqr .nuxt ./deploy
 cp package.json ./deploy
+cp newrelic.js ./deploy
+cp nuxt.config.js ./deploy
 cd ./deploy
 yarn install --production

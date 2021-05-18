@@ -10,12 +10,15 @@
     "start:prod": "NODE_ENV=production nuxt start ",
     "image:prepare": "sh scripts/prepare_package",
     "image:build": "docker build -t nuxt-envs ./deploy",
-    "image:run": "docker run -p 3000:3000 -e HOST=0.0.0.0 -e baz=hello nuxt-envs",
+    "image:run": "docker run -p 3000:3000 -e HOST=0.0.0.0 -e NR_APP_NAME=nr-nuxt -e NR_LICENCE_KEY=xxxxxx nuxt-envs",
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@newrelic/winston-enricher": "^1.0.0",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "newrelic": "^7.4.0",
+    "nuxt": "^2.15.3",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",

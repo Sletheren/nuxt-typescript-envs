@@ -31,12 +31,8 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  mounted () {
-    console.log('$config: ', this.$config)
-    console.log('Process.env.foo: ', process.env.foo)
-    console.log('Process.env.baz: ', process.env.baz)
-    console.log('$config.baz: ', this.$config.baz)
-    console.log('$config.foo: ', this.$config.foo)
+  mounted() {
+    this.$logger.info('Newrelic logging works.')
   }
 })
 </script>
